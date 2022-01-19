@@ -236,8 +236,9 @@ figcaption {
   font-weight: 500;
 }
 
-footer {
+.copyright {
   font-family: "roboto";
+  font-size: 0.75rem;
   font-weight: 200;
   letter-spacing: 0.05rem;
 }
