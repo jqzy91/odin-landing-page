@@ -1,3 +1,5 @@
+/* ----- 0. roots ----- */
+
 :root {
   --clr-bg: #1f2937;
   --clr-bg-quo: #e5e7eb;
@@ -7,7 +9,13 @@
   --clr-font-quo: #1f2937;
 
   --clr-btn: #3882f6;
+
+  --ff-primary: "roboto", sans-serif;
 }
+
+/* ----- 1. Layout ----- */
+
+/* generics & groupings */
 
 * {
   box-sizing: border-box;
@@ -16,211 +24,278 @@
 }
 
 body {
-  color: #1f2937;
-  font-family: "roboto";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.bg-header,
-.bg-section-intro,
-footer {
-  background: var(--clr-bg);
-  padding: 0 48px;
-}
-
-footer {
-  padding: 24px;
-}
+/* header */
 
 .bg-header {
-  padding-top: 32px;
+  width: 100%;
 }
 
-.intro-btn,
-.cta-btn {
-  border: none;
-  padding: 0.4rem 0.7rem;
-  border-radius: 0.3rem;
-}
-
-.header-container,
-.intro-container,
-.gallery-container,
-.quote-container,
-.cta-container {
+.header-container {
   display: flex;
   justify-content: space-between;
-  max-width: 1024px;
+  max-width: 64em;
   margin: 0 auto;
-}
-
-.intro-container,
-.gallery-container,
-.quote-container,
-.cta-container {
-  align-items: center;
+  padding: 1rem;
 }
 
 .header-nav ul {
-  list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
 }
 
-.intro-container,
-.gallery-container {
-  height: 40vh;
-}
+/* intro */
 
-.quote-container {
-  height: 35vh;
+.bg-section-intro {
+  width: 100%;
+  max-height: 45vh;
+  flex: 1;
 }
 
 .intro-container {
-  gap: 38px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 1rem 1rem 2.5rem 1rem;
+  gap: 3rem;
 }
 
-.bg-section-cta {
+.intro-container div {
   display: flex;
-  height: 25vh;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  flex: 1;
+  max-width: 30rem;
+}
+
+.intro-btn {
+  justify-self: center;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+}
+
+.intro-container img {
+  flex: 1;
+  min-width: 12rem;
+  max-width: 24rem;
+}
+
+/* gallery */
+
+.bg-section-gallery {
+  display: flex;
+  justify-content: center;
   align-items: center;
+  width: 100%;
+  min-height: 50vh;
 }
 
 .gallery-container {
+  display: flex;
   flex-direction: column;
-  padding: 48px;
+  align-items: center;
+  max-width: 64rem;
+  padding: 1rem;
+}
+
+.gallery-container h2 {
+  padding-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 .shop-items-container {
   display: flex;
-  gap: 48px;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 1rem;
 }
 
-figcaption {
-  text-align: justify;
-  text-align-last: center;
-  width: 8rem;
+figure {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 14rem;
+  min-width: 10rem;
+}
+
+.shop-items {
+  margin-bottom: 0.5rem;
+}
+
+/* quote */
+
+.bg-section-quote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 30vh;
 }
 
 .quote-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 65%;
+  align-items: center;
+  text-align: justify;
+  text-align-last: left;
+  max-width: 48rem;
+  padding: 1rem;
 }
 
 .quote-container h3 {
   align-self: flex-end;
 }
 
-.cta-container {
+/* call to action */
+
+.bg-section-cta {
   display: flex;
-  justify-content: space-between;
-  width: 65%;
-  height: 50%;
-  border-radius: 0.5rem;
-  padding: 0 48px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 20vh;
+  padding: 1rem;
 }
 
-.cta-btn {
-  border-color: white;
-  border-style: solid;
-  border-width: 0.15rem;
+.cta-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 2.5rem;
+}
+
+/* footer */
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1.3rem;
+}
+
+/* ----- 2. Typography ----- */
+
+body {
+  font-family: var(--ff-primary);
+}
+
+logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+h2 {
+  font-size: 1.3rem;
+  line-height: 1.6rem;
+  font-weight: lighter;
+  letter-spacing: 0.01rem;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+p {
+  font-size: 0.9rem;
+  font-weight: lighter;
+  letter-spacing: 0.02rem;
+}
+
+header a {
+  font-weight: 300;
+}
+
+.gallery-container h2 {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  text-align: justify;
+}
+
+.cta-container h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+footer {
+  font-family: "roboto";
+  font-weight: 200;
+  letter-spacing: 0.05rem;
+}
+
+/* ----- 3. Stylistic ----- */
+
+body {
+  color: var(--clr-font-dbl);
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.bg-header,
+.bg-header a,
+.bg-section-intro,
+.bg-section-cta,
+footer,
+button {
+  color: var(--clr-font-w);
+}
+
+.bg-header,
+.bg-header a,
+.bg-section-intro,
+footer {
+  background: var(--clr-bg);
 }
 
 .bg-section-quote {
   background: var(--clr-bg-quo);
 }
 
-.cta-container {
-  background: var(--clr-btn);
-}
-
 .intro-btn,
+.cta-container,
 .cta-btn {
   background: var(--clr-btn);
 }
 
-.header-container logo,
-.header-nav a,
-.intro-container h1,
-.intro-container p,
+.intro-btn {
+  border: none;
+}
+
+img,
 .intro-btn,
-.cta-container h2,
-.cta-container p,
-.cta-btn,
-.copyright {
-  color: var(--clr-font-w);
+.cta-container,
+.cta-btn {
+  border-radius: 0.4rem;
 }
 
-logo,
-.quote-container h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  text-align: justify;
-}
-
-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header-nav a,
-.intro-container p,
-.quote-container h3,
-.cta-container h2 {
-  list-style: none;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: lighter;
-  line-height: 1.2rem;
-}
-
-.intro-container h1 {
-  font-size: 2.85rem;
-  font-weight: bolder;
-  line-height: 3.6rem;
-  margin-bottom: 0.6rem;
-}
-
-.intro-container p {
-  margin-bottom: 1rem;
-}
-
-.gallery-container h2 {
-  font-size: 36px;
-  font-weight: bolder;
-}
-
-figure,
-.cta-container p {
-  font-size: 14px;
-}
-
-.quote-container h2,
-.cta-container p {
-  font-weight: lighter;
-}
-
-.quote-container h3,
-.cta-container h2 {
-  font-weight: bold;
-}
-
-.copyright {
-  font-size: 12px;
-  text-align: center;
-}
-
-.intro-container img {
-  background-color: gray;
-  width: 70%;
-  height: 70%;
-}
-
-.shop-items {
-  background-color: gray;
-  width: 8rem;
-  height: 8rem;
+.cta-btn {
+  border-style: solid;
+  border-width: 0.1rem;
+  border-color: var(--clr-font-w);
+  padding: 0.3rem 0.5rem;
 }
